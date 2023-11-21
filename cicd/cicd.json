@@ -1,0 +1,8 @@
+{
+    "IMAGE": "crypwal-be-sbtgeneral-module",
+    "CLUSTER": "crypto",
+    "PROJECT": "crypwal",
+    "DEPLOYMENT": "crypwal-be-sbtgeneral-module",
+    "NODETYPE": "back",
+    "PORT": "3355"
+}
