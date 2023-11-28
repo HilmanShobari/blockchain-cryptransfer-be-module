@@ -1,5 +1,5 @@
 {
-  "name": "crypwal_be_crypto_transfer_manager",
+  "name": "crypwal_be_crypto_transfer_module",
   "version": "1.0.0",
   "private": true,
   "scripts": {

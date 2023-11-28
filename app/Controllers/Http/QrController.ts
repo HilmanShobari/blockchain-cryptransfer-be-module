@@ -1,22 +1,26 @@
 export default class QrController {
   public static async createQr(request) {
     try {
-      if (!request.address || !request.value) {
+      if (!request.destinationAddress || !request.value) {
         return QrController.errorHandler({
-          status_code : 400,
-          message : "bad request"
+          status_code: 400,
+          message: 'bad request',
         })
       }
 
-      const qrValue = `ethereum:${request.address}?value=${request.value}`
+      let qrValue: string
+      if (!!request.tokenAddress) {
+        qrValue = `ethereum:${request.tokenAddress}@${request.chainId}/transfer?address=${request.destinationAddress}&uint256=${request.value}`
+      } else {
+        qrValue = `ethereum:${request.destinationAddress}?value=${request.value}`
+      }
 
       return {
         status_code: 201,
         message: 'Qr value created successfully',
         data: {
-          address: request.address,
-          value: request.value,
-          qrValue: qrValue,
+          request,
+          qrValue,
         },
       }
     } catch (error) {
