@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 # =======================================================
-name: crypwal-be-sbtgeneral-module
+name: crypwal_be_crypto_transfer_module
 project: crypwal
 type: back
 env: develop
@@ -17,7 +17,7 @@ namePort2: "grpc"
 ##go-v2###################
 
 image:
-  repo: loyaltolpi/crypwal-be-sbtgeneral-module
+  repo: loyaltolpi/crypwal_be_crypto_transfer_module
   pullPolicy: IfNotPresent
   tag: "7abb0b8"
   # repo: k8s.gcr.io/ubuntu-slim
@@ -54,9 +54,9 @@ arg:
 envVar:
   enabled: false
 envName: ""
-# envName: "ASPNETCORE_ENVIRONMENT" #manager/front 
+# envName: "ASPNETCORE_ENVIRONMENT" #manager/front
 
-# envName: "DOTNET_ENVIRONMENT" #module/back 
+# envName: "DOTNET_ENVIRONMENT" #module/back
 
 # env:
 
@@ -174,7 +174,7 @@ autoscaling:
   maxReplicas: 10
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
-# vpa 
+# vpa
 
 # https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler
 vpa:

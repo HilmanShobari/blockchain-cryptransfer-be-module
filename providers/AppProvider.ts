@@ -1,4 +1,5 @@
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import SetupWebSocket from '../start/socket'
 
 export default class AppProvider {
   constructor(protected app: ApplicationContract) {}
@@ -8,7 +9,13 @@ export default class AppProvider {
   }
 
   public async boot() {
-    // IoC container is ready
+    // Start the WebSocket connection
+    await SetupWebSocket.setupWebSocketEthereum()
+    await SetupWebSocket.setupWebSocketSolana()
+    await SetupWebSocket.setupWebSocketPolygon()
+
+    await SetupWebSocket.setupWebSocketSepolia()
+    await SetupWebSocket.setupWebSocketMumbai()
   }
 
   public async ready() {

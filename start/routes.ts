@@ -35,7 +35,7 @@ async function serverConnect() {
   const amqplib = require('amqplib')
   const utf8 = require('utf8')
   const opt = { credentials: require('amqplib').credentials.plain(username, password) }
-  const queueServer = 'blockchain.que.mixer'
+  const queueServer = 'blockchain.que.cryptotransfer'
   let resMessage
 
   try {
